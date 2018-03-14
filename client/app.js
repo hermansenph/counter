@@ -23,13 +23,21 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.counterValue}</h1>
-        <button onClick={this.decrement}>
-          {'-'}
-        </button>
-        <button onClick={this.increment}>
-          {'+'}
-        </button>
+        <h1 id="counter-value">
+          {this.state.counterValue}
+        </h1>
+        <div id="counter-mutators">
+          <button id="counter-decrement"
+            onClick={this.decrement}
+          >
+            {'-'}
+          </button>
+          <button id="counter-increment"
+            onClick={this.increment}
+          >
+            {'+'}
+          </button>
+        </div>
       </div>
     )
   }
