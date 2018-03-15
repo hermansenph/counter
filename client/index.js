@@ -1,8 +1,15 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './app'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import rootReducer from './reducers/index.js'
+import App from './components/app'
 
-ReactDOM.render(
-  <App />,
+const store = createStore(rootReducer)
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.querySelector('#counter')
 )
